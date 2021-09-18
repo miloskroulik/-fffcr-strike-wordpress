@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    FFFCR_ONLINE_STRIKE
- * @subpackage FFFCR_ONLINE_STRIKE/includes
- * @author     Fight For The Future <team@fightforthefuture.org>
+ * @package    Fffcr_Online_Strike
+ * @subpackage Fffcr_Online_Strike/includes
+ * @author     Miloš Kroulík <milos.kroulik@gmail.com>
  */
-class FFFCR_ONLINE_STRIKE_Loader {
+class FFFCROnlineStrike_wp_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

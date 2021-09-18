@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    FFFCR_ONLINE_STRIKE
- * @subpackage FFFCR_ONLINE_STRIKE/includes
- * @author     Fight For The Future <team@fightforthefuture.org>
+ * @package    Fffcr_Online_Strike
+ * @subpackage Fffcr_Online_Strike/includes
+ * @author     Miloš Kroulík <milos.kroulik@gmail.com>
  */
-class FFFCR_ONLINE_STRIKE_Activator {
+class FFFCROnlineStrike_wp_Activator {
 
 	/**
 	 * Short Description. (use period)

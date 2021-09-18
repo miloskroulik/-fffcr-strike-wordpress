@@ -23,19 +23,19 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    FFFCR_ONLINE_STRIKE
- * @subpackage FFFCR_ONLINE_STRIKE/includes
- * @author     Fight For The Future <team@fightforthefuture.org>
+ * @package    Fffcr_Online_Strike
+ * @subpackage Fffcr_Online_Strike/includes
+ * @author     Miloš Kroulík <milos.kroulik@gmail.com>
  */
-class FFFCR_ONLINE_STRIKE {
+class FFFCROnlineStrike_wp {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @since    1.0.0
+	 * @var      FFFCROnlineStrike_wp_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 *@since    1.0.0
 	 * @access   protected
-	 * @var      FFFCR_ONLINE_STRIKE_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -72,7 +72,7 @@ class FFFCR_ONLINE_STRIKE {
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'earth-day-live-wp';
+		$this->plugin_name = 'fffcr-online-strike';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -103,26 +103,26 @@ class FFFCR_ONLINE_STRIKE {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-earth-day-live-wp-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-fffcr-online-strike-wp-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-earth-day-live-wp-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-fffcr-online-strike-wp-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-earth-day-live-wp-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-fffcr-online-strike-wp-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-earth-day-live-wp-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-fffcr-online-strike-wp-public.php';
 
-		$this->loader = new FFFCR_ONLINE_STRIKE_Loader();
+		$this->loader = new FFFCROnlineStrike_wp_Loader();
 
 	}
 
@@ -137,7 +137,7 @@ class FFFCR_ONLINE_STRIKE {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new FFFCR_ONLINE_STRIKE_i18n();
+		$plugin_i18n = new FFFCROnlineStrike_wp_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,7 +152,7 @@ class FFFCR_ONLINE_STRIKE {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new FFFCR_ONLINE_STRIKE_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new FFFCROnlineStrike_wp_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -171,7 +171,7 @@ class FFFCR_ONLINE_STRIKE {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new FFFCR_ONLINE_STRIKE_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new FFFCROnlineStrike_wp_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -201,8 +201,8 @@ class FFFCR_ONLINE_STRIKE {
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
-	 * @since     1.0.0
-	 * @return    FFFCR_ONLINE_STRIKE_Loader    Orchestrates the hooks of the plugin.
+	 * @return    FFFCROnlineStrike_wp_Loader    Orchestrates the hooks of the plugin.
+	 *@since     1.0.0
 	 */
 	public function get_loader() {
 		return $this->loader;

@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    FFFCR_ONLINE_STRIKE
- * @subpackage FFFCR_ONLINE_STRIKE/public
- * @author     Fight For The Future <team@fightforthefuture.org>
+ * @package    Fffcr_Online_Strike
+ * @subpackage Fffcr_Online_Strike/includes
+ * @author     Miloš Kroulík <milos.kroulik@gmail.com>
  */
-class FFFCR_ONLINE_STRIKE_Public {
+class FFFCROnlineStrike_wp_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -58,7 +58,7 @@ class FFFCR_ONLINE_STRIKE_Public {
      * This method simply adds the Earth Day Live widget to the wordpress public site.
      */
     public function add_partial() {
-        include 'partials/earth-day-live-wp-public-display.php';
+        include 'partials/fffcr-online-strike-wp-public-display.php';
     }
 
 	/**
@@ -80,7 +80,7 @@ class FFFCR_ONLINE_STRIKE_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/earth-day-live-wp-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/fffcr-online-strike-wp-public.css', array(), $this->version, 'all' );
 
 	}
 
@@ -103,7 +103,7 @@ class FFFCR_ONLINE_STRIKE_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/earth-day-live-wp-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/fffcr-online-strike-wp-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 

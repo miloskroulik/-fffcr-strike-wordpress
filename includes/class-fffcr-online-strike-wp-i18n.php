@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    FFFCR_ONLINE_STRIKE
- * @subpackage FFFCR_ONLINE_STRIKE/includes
- * @author     Fight For The Future <team@fightforthefuture.org>
+ * @package    Fffcr_Online_Strike
+ * @subpackage Fffcr_Online_Strike/includes
+ * @author     Miloš Kroulík <milos.kroulik@gmail.com>
  */
-class FFFCR_ONLINE_STRIKE_i18n {
+class FFFCROnlineStrike_wp_i18n {
 
 
 	/**

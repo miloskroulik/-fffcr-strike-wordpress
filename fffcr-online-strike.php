@@ -42,8 +42,8 @@ define( 'FFFCR_ONLINE_STRIKE_VERSION', '1.0.0' );
  * This action is documented in includes/class-earth-day-live-wp-activator.php
  */
 function activate_fffcr_online_strike() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-earth-day-live-wp-activator.php';
-	FFFCR_ONLINE_STRIKE_Activator::activate();
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-fffcr-online-strike-wp-activator.php';
+	FFFCROnlineStrike_wp_Activator::activate();
 }
 
 /**
@@ -51,8 +51,8 @@ function activate_fffcr_online_strike() {
  * This action is documented in includes/class-earth-day-live-wp-deactivator.php
  */
 function deactivate_fffcr_online_strike() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-earth-day-live-wp-deactivator.php';
-	FFFCR_ONLINE_STRIKE_Deactivator::deactivate();
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-fffcr-online-strike-wp-deactivator.php';
+	FFFCROnlineStrike_wp_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_fffcr_online_strike' );
@@ -62,7 +62,7 @@ register_deactivation_hook( __FILE__, 'deactivate_fffcr_online_strike' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-earth-day-live-wp.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-fffcr-online-strike-wp.php';
 
 /**
  * Begins execution of the plugin.
@@ -75,7 +75,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-earth-day-live-wp.php';
  */
 function run_fffcr_online_strike() {
 
-	$plugin = new FFFCR_ONLINE_STRIKE();
+	$plugin = new FFFCROnlineStrike_wp();
 	$plugin->run();
 
 }

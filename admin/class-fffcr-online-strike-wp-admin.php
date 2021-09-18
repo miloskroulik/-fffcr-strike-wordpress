@@ -16,17 +16,17 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    FFFCR_ONLINE_STRIKE
- * @subpackage FFFCR_ONLINE_STRIKE/admin
- * @author     Fight For The Future <team@fightforthefuture.org>
+ * @package    Fffcr_Online_Strike
+ * @subpackage Fffcr_Online_Strike/includes
+ * @author     Miloš Kroulík <milos.kroulik@gmail.com>
  */
-class FFFCR_ONLINE_STRIKE_Admin {
+class FFFCROnlineStrike_wp_Admin {
     const ENABLE = 1;
     const DISABLE = 0;
     const FOOTER_DISPLAY_DATE = '2020-01-01';
     const FULL_PAGE_DISPLAY_DATE = '2020-04-22';
     const COOKIE_EXPIRATION_DAYS = 1;
-    const IFRAME_HOST = 'https://widget.earthdaylive2020.org';
+    const IFRAME_HOST = 'https://widget.zaklima.cz';
 	/**
 	 * The ID of this plugin.
 	 *
@@ -64,7 +64,7 @@ class FFFCR_ONLINE_STRIKE_Admin {
     */
     public function add_plugin_admin_menu() {
         add_submenu_page( 'options-general.php',
-            'Earth Day Live Settings', 'Earth Day Live Settings', 'manage_options',
+            'FfF ČR Online Strike Settings', 'FfF ČR Online Strike Settings', 'manage_options',
             $this->plugin_name, array($this, 'display_plugin_setup_page')
         );
     }
@@ -84,7 +84,7 @@ class FFFCR_ONLINE_STRIKE_Admin {
      * Renders the plugin settings page.
      */
     public function display_plugin_setup_page() {
-        include_once( 'partials/' . $this->plugin_name . '-admin-display.php' );
+        include_once( 'partials/' . $this->plugin_name . '-wp-admin-display.php' );
     }
 
     /**
@@ -144,7 +144,7 @@ class FFFCR_ONLINE_STRIKE_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/earth-day-live-wp-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/fffcr-online-strike-wp-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -167,7 +167,7 @@ class FFFCR_ONLINE_STRIKE_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/earth-day-live-wp-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/fffcr-online-strike-wp-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
